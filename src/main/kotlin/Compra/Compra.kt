@@ -1,4 +1,4 @@
-/*
+package Compra/*
     na nossa classe, temos 4 métodos
     - adicionar produtos a lista
     - listar produtos da lista
@@ -6,7 +6,7 @@
     - remover produtos da lista
      */
 
-class Compras {
+class Compra {
 
     var lista = mutableListOf<String>()
 
