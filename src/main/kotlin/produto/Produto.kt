@@ -1,71 +1,78 @@
 package produto
 
-class Produto {
+import estabelecimento.Estabelecimento
 
-    val listaProduto = mutableListOf<String>()
+class Produto (nome: String, endereco: String, CNPJ: String,bairro: String)
+        : Estabelecimento(nome, endereco, CNPJ){
 
-    // Cadastrar dados da listaProduto
-    fun cadastroProd() {
-        while (true) {
-            println("Entre com o valor do produto:")
-            val valor = readln()
+    companion object {
+        private val listaProduto = mutableListOf<String>()
 
-            if (valor != "") {
-                listaProduto.add(valor)
-                println("Item $valor cadastrado com sucesso =)")
-            } else {
-                break // parar o while quando valor for vazio
-            }
-        }
-    }
+        // Cadastrar dados da listaProduto
+        fun cadastroProd() {
+            while (true) {
+                println("Entre com o valor do produto:")
+                val valor = readln()
 
-    // Remover dados da listaProduto
-    fun removerProd() {
-        while (true) {
-            println("Entre com o valor do produto para ser removido:")
-            val valor = readln()
-
-            if (listaProduto.isEmpty()) {
-                println("Não existe item na lista")
-            } else {
-                if (listaProduto.contains(valor)) {
-                    listaProduto.remove(valor)
-                    println("Item $valor removido com sucesso =)")
-                } else if (valor == "") {
-                    break // parar o while quando valor for vazio
+                if (valor != "") {
+                    listaProduto.add(valor)
+                    println("Item $valor cadastrado com sucesso =)")
                 } else {
-                    println("Item $valor não consta na lista!")
+                    break // parar o while quando valor for vazio
                 }
             }
         }
-    }
 
-    fun editarProd() {
-        while (true) {
-            println("Entre com o valor do produto para ser editado:")
-            val valor = readln()
+        // Remover dados da listaProduto
+        fun removerProd() {
+            while (true) {
+                println("Entre com o valor do produto para ser removido:")
+                val valor = readln()
 
-            if (listaProduto.isEmpty()) {
-                println("Não existe item na lista")
-            } else {
-                if (listaProduto.contains(valor)) {
-                    val index = listaProduto.indexOf(valor)
-                    println("Adicionar novo item:")
-                    val novoItem = readln()
-                    listaProduto[index] = novoItem
-                    println("Item $valor foi atualizado para item $novoItem.")
-                } else if (valor == "") {
-                    break // parar o while quando valor for vazio
+                if (listaProduto.isEmpty()) {
+                    println("Não existe item na lista")
                 } else {
-                    println("O item $valor não existe na lista.")
+                    if (listaProduto.contains(valor)) {
+                        listaProduto.remove(valor)
+                        println("Item $valor removido com sucesso =)")
+                    } else if (valor == "") {
+                        break // parar o while quando valor for vazio
+                    } else {
+                        println("Item $valor não consta na lista!")
+                    }
                 }
             }
         }
-    }
 
-    fun mostraProd() {
-        listaProduto.forEach {
-            println(it)
+        // Editar dados da listaProduto
+        fun editarProd() {
+            while (true) {
+                println("Entre com o valor do produto para ser editado:")
+                val valor = readln()
+
+                if (listaProduto.isEmpty()) {
+                    println("Não existe item na lista")
+                } else {
+                    if (listaProduto.contains(valor)) {
+                        val index = listaProduto.indexOf(valor)
+                        println("Adicionar novo item:")
+                        val novoItem = readln()
+                        listaProduto[index] = novoItem
+                        println("Item $valor foi atualizado para item $novoItem.")
+                    } else if (valor == "") {
+                        break // parar o while quando valor for vazio
+                    } else {
+                        println("O item $valor não existe na lista.")
+                    }
+                }
+            }
+        }
+
+        // Mostrar dados da listaProduto
+        fun mostraProd() {
+            listaProduto.forEach {
+                println(it)
+            }
         }
     }
 }
