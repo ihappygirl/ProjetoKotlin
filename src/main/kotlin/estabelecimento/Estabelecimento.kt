@@ -8,12 +8,12 @@ open class Estabelecimento(private val nome: String, private val endereco: Strin
         var estab = Estabelecimento(nome = "", endereco = "", CNPJ = "")
 
         fun cadastroEstab(): Estabelecimento {
-            print("Digite seu nome: ")
-            var nome = readln()
-            print("Digite seu endereco: ")
-            var endereco = readln()
-            print("Digite seu CNPJ: ")
-            var cnpj = readln()
+            print("Digite o nome do estabelecimento: ")
+            val nome = readln()
+            print("Digite o endereco do estabelecimento: ")
+            val endereco = readln()
+            print("Digite o CNPJ do estabelecimento: ")
+            val cnpj = readln()
 
             estab = Estabelecimento(nome = nome, endereco = endereco, CNPJ = cnpj)
 

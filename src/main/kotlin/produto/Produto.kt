@@ -11,7 +11,7 @@ class Produto (nome: String, endereco: String, CNPJ: String,bairro: String)
         // Cadastrar dados da listaProduto
         fun cadastroProd() {
             while (true) {
-                println("Entre com o valor do produto:")
+                println("Entre com o nome do produto:")
                 val valor = readln()
 
                 if (valor != "") {
@@ -26,7 +26,7 @@ class Produto (nome: String, endereco: String, CNPJ: String,bairro: String)
         // Remover dados da listaProduto
         fun removerProd() {
             while (true) {
-                println("Entre com o valor do produto para ser removido:")
+                println("Entre com o nome do produto para ser removido:")
                 val valor = readln()
 
                 if (listaProduto.isEmpty()) {
@@ -47,7 +47,7 @@ class Produto (nome: String, endereco: String, CNPJ: String,bairro: String)
         // Editar dados da listaProduto
         fun editarProd() {
             while (true) {
-                println("Entre com o valor do produto para ser editado:")
+                println("Entre com o nome do produto para ser editado:")
                 val valor = readln()
 
                 if (listaProduto.isEmpty()) {
